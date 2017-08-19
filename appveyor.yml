@@ -3,10 +3,10 @@ branches:
   only:
     - master
 image: Visual Studio 2017
-before_build:
+#before_build:
   # Display .NET Core version
-  - cmd: dotnet --version
+#  - cmd: dotnet --version
   # Display minimal restore text
-  - cmd: dotnet restore
+#  - cmd: dotnet restore
 build_script:
 - dotnet build
