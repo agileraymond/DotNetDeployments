@@ -4,4 +4,5 @@ branches:
     - master
 image: Visual Studio 2017
 build_script:
+- dotnet restore
 - dotnet build
