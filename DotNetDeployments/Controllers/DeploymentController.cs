@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Amazon.CodeDeploy;
+using Amazon.CodeDeploy.Model;
 using Microsoft.AspNetCore.Mvc;
-using DotNetDeployments.Models;
-using Amazon.CodeDeploy;
+using System;
+using System.Threading.Tasks;
 
 namespace DotNetDeployments.Controllers
 {
     public class DeploymentController : Controller
     {
-        public IActionResult Index()
-        {            
-            var codeDeploy = new AmazonCodeDeployClient();
+        IAmazonCodeDeploy AmazonCodeDeployClient { get; set; }
 
+        public DeploymentController(IAmazonCodeDeploy amazonCodeDeployClient)
+        {
+            AmazonCodeDeployClient = amazonCodeDeployClient;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var createAppRequest = new CreateApplicationRequest
+            {
+                ApplicationName = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss")
+            };
+            
+            var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);
             return View();
         }      
     }
