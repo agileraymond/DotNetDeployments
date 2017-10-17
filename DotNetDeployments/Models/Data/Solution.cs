@@ -1,6 +1,10 @@
+using System;
 
-public class Solution
+namespace DotNetDeployments.Models
 {
-    public int SolutionId { get; set; }
-    public string SolutionName { get; set; }
+    public class Solution
+    {
+        public int SolutionId { get; set; }
+        public string SolutionName { get; set; }
+    }
 }

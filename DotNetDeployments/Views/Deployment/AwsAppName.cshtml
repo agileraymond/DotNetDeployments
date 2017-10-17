@@ -1,0 +1,13 @@
+﻿@model DotNetDeployments.Models.Solution
+@{
+    ViewData["Title"] = "Create New Application Name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create New Application Name</h2>
+
+using (@Html.BeginForm("SaveAppName", "DeploymentController", FormMethod.Post)){
+    @Html.LabelFor(m => m.SolutionName)
+    @Html.TextBoxFor(m => m.SolutionName)
+}
+

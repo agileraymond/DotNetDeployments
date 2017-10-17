@@ -24,6 +24,12 @@ namespace DotNetDeployments.Controllers
             
             var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);
             return View();
-        }      
+        }
+
+        public IActionResult AwsAppName()
+        {
+
+            return View();
+        }
     }
 }
