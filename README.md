@@ -5,4 +5,4 @@ AWS CodeDeploy will serve as our deployment engine. It's capable of deploying co
 
 This project is built against .NET Core 2. .NET Core is cross-platform and can run on Windows, Linux, and Mac OS.
 
-To get started with this project, you will need to [install .NET Core.] (https://www.microsoft.com/net/download/core)   
+To get started with this project, you will need to (install .NET Core.)[https://www.microsoft.com/net/download/core]
