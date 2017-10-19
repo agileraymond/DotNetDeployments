@@ -21,9 +21,22 @@ namespace DotNetDeployments.Controllers
             {
                 ApplicationName = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss")
             };
-            
+
             var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);
             return View();
-        }      
+        } 
+        
+        public IActionResult AppNameForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AppNewSave(CreateApplicationRequest applicationRequest)
+        {
+            var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(applicationRequest);
+
+            return View(Index());
+        }
     }
 }
