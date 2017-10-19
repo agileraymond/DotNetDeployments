@@ -8,7 +8,7 @@ Powershell will be our scripting tool responsible to create Windows Services and
 This project is built against .NET Core 2. .NET Core is cross-platform and can run on Windows, Linux, and Mac OS.
 
 # Contributing
-To get started with this project, you will need to [install .NET Core.](https://www.microsoft.com/net/download/core). After installing .NET Core, you can use any text editor to make your changes. I highly recommend using [Visual Studio Code](https://code.visualstudio.com/download).
+To get started with this project, you will need to [install .NET Core.](https://www.microsoft.com/net/download/core) After installing .NET Core, you can use any text editor to make your changes. I highly recommend using [Visual Studio Code](https://code.visualstudio.com/download).
 
 You also need to [install AWS CLI tool](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [setup a profile](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) called "dotnetdeployments-profile".
 
