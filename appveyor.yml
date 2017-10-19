@@ -3,5 +3,7 @@ branches:
   only:
     - master
 image: Visual Studio 2017
+before_build:
+- cd src/DotNetDeployments
 build_script:
 - dotnet build
