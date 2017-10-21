@@ -20,5 +20,18 @@ namespace DotNetDeployments.Tests
 
             Assert.Equal(expectedShowRequestId, errorViewModel.ShowRequestId);
         }
+
+        [Theory]
+        [InlineData("1a")]
+        [InlineData(" ")]
+        public void ReturnTheInitializationValue(string expectedRequestId)
+        {
+            var errorViewModel = new ErrorViewModel
+            {
+                RequestId = expectedRequestId
+            };
+
+            Assert.Equal(expectedRequestId, errorViewModel.RequestId);
+        }
     }
 }
