@@ -5,6 +5,11 @@ namespace DotNetDeployments.Tests
 {
     public class ErrorViewModelShould
     {
+        /// <summary>
+        /// Test different possibilities of ShowRequestId value
+        /// </summary>
+        /// <param name="requestId"></param>
+        /// <param name="expectedShowRequestId"></param>
         [Theory]
         [InlineData("", false)]
         [InlineData(null, false)]
@@ -21,6 +26,11 @@ namespace DotNetDeployments.Tests
             Assert.Equal(expectedShowRequestId, errorViewModel.ShowRequestId);
         }
 
+        /// <summary>
+        /// These are meant to check the setter and getter of properties that have not been tested
+        /// http://blog.ploeh.dk/2013/03/08/test-trivial-code/
+        /// </summary>
+        /// <param name="expectedRequestId"></param>
         [Theory]
         [InlineData("1a")]
         [InlineData(" ")]
@@ -32,6 +42,18 @@ namespace DotNetDeployments.Tests
             };
 
             Assert.Equal(expectedRequestId, errorViewModel.RequestId);
+        }
+
+        /// <summary>
+        /// Test empty constructor initialization
+        /// </summary>
+        [Fact]
+        public void ReturnTheDefaultPropertyValuesWithEmptyConstructorInitialization()
+        {
+            var errorViewModel = new ErrorViewModel();
+
+            Assert.Equal(null, errorViewModel.RequestId);
+            Assert.False(errorViewModel.ShowRequestId);
         }
     }
 }
