@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotNetDeployments.Controllers
 {
-    public class DeploymentController : Controller
+    public class DeploymentConfigurationController : Controller
     {
         IAmazonCodeDeploy AmazonCodeDeployClient { get; set; }
 
