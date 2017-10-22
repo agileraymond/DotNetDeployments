@@ -7,3 +7,8 @@ before_build:
 - cd src/DotNetDeployments
 build_script:
 - dotnet build
+before_test:
+  - cd Tests
+test: 
+  - dotnet test
+  
