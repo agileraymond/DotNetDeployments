@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/DotNetDeployments/bin/Debug/netcoreapp2.0/DotNetDeployments.dll",
+            "program": "${workspaceRoot}/src/DotNetDeployments/bin/Debug/netcoreapp2.0/DotNetDeployments.dll",
             "args": [],
-            "cwd": "${workspaceRoot}/DotNetDeployments",
+            "cwd": "${workspaceRoot}/src/DotNetDeployments",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
