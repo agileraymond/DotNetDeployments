@@ -10,5 +10,5 @@ build_script:
 before_test:
   - cd Tests
 test: 
-  - dotnet test
-  
+  assemblies:
+    - '**\*.Tests.dll'
