@@ -8,5 +8,5 @@ before_build:
 build_script:
 - dotnet build
 test_script:
-  - cd Tests
+  - cd ../../Tests
   - dotnet test
