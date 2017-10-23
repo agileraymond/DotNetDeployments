@@ -15,4 +15,5 @@ deploy:
   server:                  # remove to push to NuGet.org
   api_key:
     secure: m49OJ7+Jdt9an3jPcTukHA==
-artifact: /.*\.nupkg/
+artifacts:
+  - path: '**\src\.*.nupkg' # find all NuGet packages recursively
