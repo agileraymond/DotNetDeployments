@@ -10,3 +10,9 @@ build_script:
 test_script:
   - cd ../../Tests
   - dotnet test
+deploy:
+  provider: NuGet
+  server:                  # remove to push to NuGet.org
+  api_key:
+    secure: m49OJ7+Jdt9an3jPcTukHA==
+artifact: /.*\.nupkg/
