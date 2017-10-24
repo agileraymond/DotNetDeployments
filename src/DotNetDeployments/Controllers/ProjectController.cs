@@ -17,6 +17,7 @@ namespace DotNetDeployments.Controllers
 
         public IActionResult Index()
         {
+            /* 
             // Define item attributes
             Dictionary<string, attributevalue=""> attributes = new Dictionary<string, attributevalue="">();
             
@@ -32,6 +33,7 @@ namespace DotNetDeployments.Controllers
             };
             
             AmazonDynamoDBClient.PutItem(request);
+            */
             
             return View();
         }
