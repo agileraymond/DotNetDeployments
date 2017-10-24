@@ -9,32 +9,16 @@ using Xunit;
 
 namespace DotNetDeployments.Tests.Controllers
 {
-    public class DeploymentControllerShould
+    public class DeploymentConfigurationControllerShould
     {
         private readonly Mock<IAmazonCodeDeploy> _mockAmazonCodeDeploy;
-        private readonly DeploymentController _sut;
+        private readonly DeploymentConfigurationController _sut;
 
-        public DeploymentControllerShould()
+        public DeploymentConfigurationControllerShould()
         {
             _mockAmazonCodeDeploy = new Mock<IAmazonCodeDeploy>();
-            _sut = new DeploymentController(_mockAmazonCodeDeploy.Object);
-        }
-
-        /// <summary>
-        /// Test Index
-        /// </summary>
-        [Fact]
-        public void ReturnViewWithNullObjectForIndex()
-        {
-            _mockAmazonCodeDeploy
-                .Setup(x => x.CreateApplicationAsync(It.IsAny<CreateApplicationRequest>(), It.IsAny<CancellationToken>()))
-                .Returns(Task.FromResult(new CreateApplicationResponse()));
-
-            var result = _sut.Index();
-
-            var viewResult = Assert.IsType<ViewResult>(result.Result);
-            Assert.True(viewResult.Model == null);
-        }
+            _sut = new DeploymentConfigurationController(_mockAmazonCodeDeploy.Object);
+        }        
 
         /// <summary>
         /// Test AppNameForm
@@ -61,7 +45,7 @@ namespace DotNetDeployments.Tests.Controllers
             var result = _sut.AppNewSave(new CreateApplicationRequest());
 
             var viewResult = Assert.IsType<ViewResult>(result.Result);
-            Assert.True(viewResult.Model != null);
+            Assert.True(viewResult.Model == null);
         }
     }
 }
