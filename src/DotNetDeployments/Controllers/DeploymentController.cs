@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DotNetDeployments.Controllers
 {
-    public class DeploymentConfigurationController : Controller
+    public class DeploymentController : Controller
     {
         IAmazonCodeDeploy AmazonCodeDeployClient { get; set; }
 
-        public DeploymentConfigurationController(IAmazonCodeDeploy amazonCodeDeployClient)
+        public DeploymentController(IAmazonCodeDeploy amazonCodeDeployClient)
         {
             AmazonCodeDeployClient = amazonCodeDeployClient;
         }
