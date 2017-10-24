@@ -14,17 +14,6 @@ namespace DotNetDeployments.Controllers
         {
             AmazonCodeDeployClient = amazonCodeDeployClient;
         }
-
-        public async Task<IActionResult> Index()
-        {
-            var createAppRequest = new CreateApplicationRequest
-            {
-                ApplicationName = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss")
-            };
-
-            var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);
-            return View();
-        } 
         
         public IActionResult AppNameForm()
         {
@@ -36,7 +25,7 @@ namespace DotNetDeployments.Controllers
         {
             var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(applicationRequest);
 
-            return View(Index());
+            return View();
         }
     }
 }
