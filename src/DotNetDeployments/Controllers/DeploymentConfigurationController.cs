@@ -6,25 +6,14 @@ using System.Threading.Tasks;
 
 namespace DotNetDeployments.Controllers
 {
-    public class DeploymentController : Controller
+    public class DeploymentConfigurationController : Controller
     {
         IAmazonCodeDeploy AmazonCodeDeployClient { get; set; }
 
-        public DeploymentController(IAmazonCodeDeploy amazonCodeDeployClient)
+        public DeploymentConfigurationController(IAmazonCodeDeploy amazonCodeDeployClient)
         {
             AmazonCodeDeployClient = amazonCodeDeployClient;
         }
-
-        public async Task<IActionResult> Index()
-        {
-            var createAppRequest = new CreateApplicationRequest
-            {
-                ApplicationName = DateTime.Now.ToString("MM-dd-yyyy-hh-mm-ss")
-            };
-
-            var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);
-            return View();
-        } 
         
         public IActionResult AppNameForm()
         {
@@ -36,7 +25,7 @@ namespace DotNetDeployments.Controllers
         {
             var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(applicationRequest);
 
-            return View(Index());
+            return View();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace DotNetDeployments.Controllers
 {
-    public class HomeController : Controller
+    public class ProjectController : Controller
     {
         public IActionResult Index()
         {
