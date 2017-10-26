@@ -20,9 +20,10 @@ namespace DotNetDeployments
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDefaultAWSOptions(Configuration.GetAWSOptions());
+            var awsOptions = Configuration.GetAWSOptions();
+            services.AddDefaultAWSOptions(awsOptions);
             services.AddAWSService<IAmazonCodeDeploy>();
-            services.AddAWSService<IAmazonDynamoDB>();
+            services.AddAWSService<IAmazonDynamoDB>();    
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
