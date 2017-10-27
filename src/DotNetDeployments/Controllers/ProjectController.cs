@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using Amazon.DynamoDBv2.DataModel;
 using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
@@ -19,31 +20,24 @@ namespace DotNetDeployments.Controllers
         }
         
         public IActionResult Index()
+        {                
+            return View();
+        }
+
+        public void SaveProject()
         {
-            return View();
-        }
-
-        /* 
-        public async Task<IActionResult> Create()
-        {            
-            // Define item attributes
-            var attributes = new Dictionary<string, AttributeValue>();
+            /*
+            it is better to use DynamoDBContext to save, edit, delete documents 
+            var context = new DynamoDBContext(_dynamoDbClient);
             
-            attributes["SolutionName"] = new AttributeValue { S = "Mdb.Logger" };
-            attributes["ProjectName"] = new AttributeValue { S = "Mdb.Utility" };
-            attributes["ProjectType"] = new AttributeValue { N = "1" };
-            
-            // Create PutItem request
-            var request = new PutItemRequest
+            var project = new ProjectModel
             {
-                TableName = "Projects",
-                Item = attributes
-            };            
-            
-            var result = await _dynamoDbClient.PutItemAsync(request);         
-
-            return View();
-        }
-        */
+                SolutionName = "raysolution",
+                ProjectName = "myprojecy",
+                ProjectType = ProjectType.Web
+            };
+            await context.SaveAsync(project);
+            */
+        }        
     }
 }
