@@ -20,7 +20,8 @@ namespace DotNetDeployments.Controllers
         }
         
         public IActionResult Index()
-        {                
+        {   
+            var projects = GetProjects();  
             return View();
         }
 
@@ -38,6 +39,21 @@ namespace DotNetDeployments.Controllers
             };
             await context.SaveAsync(project);
             */
+        }
+
+        private async Task<List<ProjectModel>> GetProjects()
+        {            
+            var projects = new List<ProjectModel>();
+            var context = new DynamoDBContext(_dynamoDbClient);
+            var conditions = new List<ScanCondition>();
+            var scanRequest = context.ScanAsync<ProjectModel>(conditions);
+
+            while (!scanRequest.IsDone)
+            {
+                projects.AddRange(await scanRequest.GetNextSetAsync());
+            }
+
+            return projects;            
         }        
     }
 }
