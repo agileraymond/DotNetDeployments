@@ -19,11 +19,11 @@ namespace DotNetDeployments.Controllers
             _dynamoDbClient = dynamoDbClient;            
         }
         
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {   
-            var projects = GetProjects();  
-            return View();
-        }
+            var projects = await GetProjects();  
+            return View(projects);
+        }        
 
         public void SaveProject()
         {

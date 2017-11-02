@@ -2,7 +2,7 @@ namespace DotNetDeployments.Models
 { 
    public enum ProjectType 
     { 
-        Web,
-        Executable
+        Web = 1,
+        Executable = 2
     } 
  } 
