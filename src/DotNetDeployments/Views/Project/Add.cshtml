@@ -1,0 +1,33 @@
+﻿@model DotNetDeployments.Models.ProjectModel
+
+@{
+    ViewData["Title"] = "Add Project";
+}
+
+<h2>Add Project</h2>
+<form asp-controller="Project" asp-action="AddProject" method="post" role="form">
+
+    <div class="form-group">
+        <label asp-for="SolutionName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="SolutionName" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProjectName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="ProjectName" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProjectType" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="ProjectType" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add" />
+        </div>
+    </div>
+</form>

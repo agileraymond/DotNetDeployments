@@ -1,11 +1,8 @@
-﻿using DotNetDeployments.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
+﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
+using DotNetDeployments.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System;
 using System.Threading.Tasks;
 
 namespace DotNetDeployments.Controllers
@@ -25,20 +22,17 @@ namespace DotNetDeployments.Controllers
             return View(projects);
         }        
 
-        public void SaveProject()
+        public IActionResult Add()
+        {           
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddProject(ProjectModel project)
         {
-            /*
-            it is better to use DynamoDBContext to save, edit, delete documents 
-            var context = new DynamoDBContext(_dynamoDbClient);
-            
-            var project = new ProjectModel
-            {
-                SolutionName = "raysolution",
-                ProjectName = "myprojecy",
-                ProjectType = ProjectType.Web
-            };
+            var context = new DynamoDBContext(_dynamoDbClient);                        
             await context.SaveAsync(project);
-            */
+            return RedirectToAction("Index");
         }
 
         private async Task<List<ProjectModel>> GetProjects()
