@@ -1,0 +1,20 @@
+﻿@model Amazon.CodeDeploy.Model.CreateApplicationRequest
+@{
+    ViewData["Title"] = "Add Deployment App";
+}
+
+<h2>Add Deployment App</h2>
+<form asp-controller="DeploymentConfiguration" asp-action="Add" method="post" role="form">
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">App Name</label>
+        <div class="col-md-10">
+            <input asp-for="ApplicationName" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add" />
+        </div>
+    </div>
+</form>

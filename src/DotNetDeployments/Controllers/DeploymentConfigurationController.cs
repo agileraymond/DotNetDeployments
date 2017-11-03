@@ -15,15 +15,36 @@ namespace DotNetDeployments.Controllers
             AmazonCodeDeployClient = amazonCodeDeployClient;
         }
         
-        public IActionResult AppNameForm()
+        public IActionResult Add()
         {
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AppNewSave(CreateApplicationRequest applicationRequest)
+        public async Task<IActionResult> Edit(string id)
         {
-            var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(applicationRequest);
+            try
+            {
+                var getAppRequest = new GetApplicationRequest { ApplicationName = id };
+                var getAppResponse = await AmazonCodeDeployClient.GetApplicationAsync(getAppRequest);                
+            }
+            catch (ApplicationDoesNotExistException)
+            {
+                return RedirectToAction("Add");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(CreateApplicationRequest createAppRequest)
+        {
+            try
+            {
+                var createAppResponse = await AmazonCodeDeployClient.CreateApplicationAsync(createAppRequest);    
+            }
+            catch (System.Exception)
+            {         
+            }
 
             return View();
         }

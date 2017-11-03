@@ -33,7 +33,7 @@ namespace DotNetDeployments.Controllers
             var context = new DynamoDBContext(_dynamoDbClient);                        
             await context.SaveAsync(project);
             return RedirectToAction("Index");
-        }
+        }        
 
         private async Task<List<ProjectModel>> GetProjects()
         {            
