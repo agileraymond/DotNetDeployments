@@ -20,29 +20,23 @@ namespace DotNetDeployments.Tests.Controllers
             _sut = new DeploymentConfigurationController(_mockAmazonCodeDeploy.Object);
         }        
 
-        /// <summary>
-        /// Test AppNameForm
-        /// </summary>
         [Fact]
-        public void ReturnViewWithNullObjectForAppNameForm()
+        public void ReturnViewWithNullObjectForAdd()
         {
-            var result = _sut.AppNameForm();
+            var result = _sut.Add();
 
             var viewResult = Assert.IsType<ViewResult>(result);
             Assert.True(viewResult.Model == null);
         }
 
-        /// <summary>
-        /// Test AppNewSave
-        /// </summary>
         [Fact]
-        public void ReturnViewWithoutNullObjectForAppNewSave()
+        public void ReturnViewWithoutNullObjectForAdd()
         {
             _mockAmazonCodeDeploy
                 .Setup(x => x.CreateApplicationAsync(It.IsAny<CreateApplicationRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(new CreateApplicationResponse()));
 
-            var result = _sut.AppNewSave(new CreateApplicationRequest());
+            var result = _sut.Add(new CreateApplicationRequest());
 
             var viewResult = Assert.IsType<ViewResult>(result.Result);
             Assert.True(viewResult.Model == null);
