@@ -1,4 +1,4 @@
-(https://ci.appveyor.com/api/projects/status/github/agileraymond/DotNetDeployments)
+![alt text](https://ci.appveyor.com/api/projects/status/github/agileraymond/DotNetDeployments "Build Status")
 
 # .NET Deployments
 The goal of this open source project is to allow .NET developers to deploy .NET projects. This includes Windows Services (exe), ASP.NET MVC sites, Web Api, and WCF projects. Developers are more productive when they concentrate on code and logic not on deployment tasks. 
