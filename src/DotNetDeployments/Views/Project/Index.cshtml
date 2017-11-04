@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProjectType)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AwsAppName)
+            </th>            
             <th></th>
         </tr>
     </thead>
@@ -38,7 +41,10 @@
                     @Html.DisplayFor(modelItem => item.ProjectType)
                 </td>
                 <td>
-                    @Html.ActionLink("Deployment Config", "Edit", "DeploymentConfiguration", new { id = item.ProjectName }) 
+                    @Html.DisplayFor(modelItem => item.AwsAppName)
+                </td>                
+                <td>
+                    @Html.ActionLink("Deployment Config", "Edit", "DeploymentConfiguration", new { id = item.AwsAppName }) 
                 </td>
             </tr>
         }
