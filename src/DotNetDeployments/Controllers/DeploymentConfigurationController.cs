@@ -48,5 +48,25 @@ namespace DotNetDeployments.Controllers
 
             return View();
         }
-    }
+        
+        public IActionResult AddDeploymentGroup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest)
+        {
+            try
+            {
+                var createDeploymentGroupResponse = await AmazonCodeDeployClient.CreateDeploymentGroupAsync(createDeploymentGroupRequest);    
+            }
+            catch (System.Exception ex)
+            {   
+                throw;
+            }
+
+            return View();
+        }
+    }   
 }

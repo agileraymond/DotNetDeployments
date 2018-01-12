@@ -1,0 +1,71 @@
+﻿@model Amazon.CodeDeploy.Model.CreateDeploymentGroupRequest 
+
+@{
+    ViewData["Title"] = "Add Deployment Group";
+}
+
+<h2>Add Deployment Group</h2>
+<form asp-controller="DeploymentConfiguration" asp-action="AddDeploymentGroup" method="post" role="form">
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Alarm Configuration</label>
+        <div class="col-md-10">
+            <input asp-for="AlarmConfiguration" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">App Name</label>
+        <div class="col-md-10">
+            <input asp-for="ApplicationName" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Auto Rollback Configuration</label>
+        <div class="col-md-10">
+            <input asp-for="AutoRollbackConfiguration" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Auto Scaling Groups</label>
+        <div class="col-md-10">
+            <input asp-for="AutoScalingGroups" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Blue Green Deployment Configuration</label>
+        <div class="col-md-10">
+            <input asp-for="BlueGreenDeploymentConfiguration" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Deployment Configuration Name</label>
+        <div class="col-md-10">
+            <input asp-for="DeploymentConfigName" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Deployment Group Name</label>
+        <div class="col-md-10">
+            <input asp-for="DeploymentGroupName" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Deployment Style</label>
+        <div class="col-md-10">
+            <input asp-for="DeploymentStyle" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add" />
+        </div>
+    </div>
+</form>
