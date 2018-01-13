@@ -56,7 +56,7 @@ namespace DotNetDeployments.Controllers
 
         [HttpPost]
         public async Task<IActionResult> AddDeploymentGroup(CreateDeploymentGroupRequest createDeploymentGroupRequest)
-        {
+        {            
             try
             {
                 var createDeploymentGroupResponse = await AmazonCodeDeployClient.CreateDeploymentGroupAsync(createDeploymentGroupRequest);    
