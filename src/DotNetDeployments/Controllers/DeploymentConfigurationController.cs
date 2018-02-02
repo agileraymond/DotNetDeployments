@@ -68,5 +68,10 @@ namespace DotNetDeployments.Controllers
 
             return View();
         }
+
+        public IActionResult AddDeployment()
+        {
+            return View();
+        }
     }   
 }
