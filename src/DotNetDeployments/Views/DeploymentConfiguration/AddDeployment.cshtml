@@ -3,18 +3,75 @@
     ViewData["Title"] = "Add Deployment";
 }
 
-<h2>Add Deployment App</h2>
+<h2>Add Deployment</h2>
 <form asp-controller="DeploymentConfiguration" asp-action="AddDeployment" method="post" role="form">
 
     <div class="form-group">
-        <label class="col-md-2 control-label">App Name</label>
-        <div class="col-md-10">
+        <label class="control-label">App Name</label>
+        <div class="">
             <input asp-for="ApplicationName" class="form-control" />
         </div>
     </div>
+
+    <div>
+        <label class="control-label">Deployment Group Name</label>
+        <div class="">
+            <input asp-for="DeploymentGroupName" class="form-control" />
+        </div>
+    </div>
+
+    <div>
+        <label class="control-label">Description</label>
+        <div class="">
+            <input asp-for="Description" class="form-control" />
+        </div>
+    </div>
+
+    <div>
+        <label class="control-label">File Exists Behavior</label>
+        <div class="">
+            <input asp-for="FileExistsBehavior" class="form-control" />
+        </div>
+    </div>
+
+    <div>
+        <label class="control-label">Ignore Application Stop Failures?</label>
+        <div class="">
+            <input asp-for="IgnoreApplicationStopFailures" class="form-control" />
+        </div>
+    </div>
+    
+    <div>
+        <label class="control-label">Revision Type</label>
+        <div class="">
+            <input asp-for="Revision.RevisionType" class="form-control" />
+        </div>
+    </div>
+    
+    <div>
+        <label class="control-label">S3 Location</label>
+        <div class="">
+            <input asp-for="Revision.S3Location" class="form-control" />
+        </div>
+    </div>
+    
+    <div>
+        <label class="control-label">TargetInstances</label>
+        <div class="">
+            <input asp-for="TargetInstances" class="form-control" />
+        </div>
+    </div>
+    
+    <div>
+        <label class="control-label">Update Outdated Instances Only?</label>
+        <div class="">
+            <input asp-for="UpdateOutdatedInstancesOnly" class="form-control" />
+        </div>
+    </div>
+    
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-           @* <input type="submit" class="btn btn-default" value="Add Deployment" /> *@
+            <input type="submit" class="btn btn-default" value="Add Deployment" />
         </div>
     </div>
 </form>

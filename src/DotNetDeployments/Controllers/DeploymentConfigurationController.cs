@@ -73,5 +73,30 @@ namespace DotNetDeployments.Controllers
         {
             return View();
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> AddDeployment(CreateDeploymentRequest createDeploymentRequest)
+        {            
+            try
+            {
+                var revision = new Amazon.CodeDeploy.Model.RevisionLocation();
+                revision.RevisionType = Amazon.CodeDeploy.RevisionLocationType.S3;
+                
+                var s3location = new Amazon.CodeDeploy.Model.S3Location();
+                s3location.Bucket = "s3://dotnetdeploymentbucket";
+                s3location.BundleType = Amazon.CodeDeploy.BundleType.Zip;
+                s3location.Key = "Archive.zip";
+                revision.S3Location = s3location; 
+                                
+                createDeploymentRequest.Revision = revision;
+                var createDeploymentResponse = await AmazonCodeDeployClient.CreateDeploymentAsync(createDeploymentRequest);    
+            }
+            catch (System.Exception ex)
+            {   
+                throw;
+            }
+
+            return View();
+        }
     }   
 }
