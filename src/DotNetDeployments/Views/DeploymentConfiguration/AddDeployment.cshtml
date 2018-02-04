@@ -42,19 +42,26 @@
     </div>
     
     <div>
-        <label class="control-label">Revision Type</label>
+        <label class="control-label">S3 Bucket</label>
         <div class="">
-            <input asp-for="Revision.RevisionType" class="form-control" />
-        </div>
+            <input asp-for="Revision.S3Location.Bucket" class="form-control" />
+        </div>  
+    </div>
+
+    <div>
+        <label class="control-label">S3 Bundle Type</label>
+        <div class="">
+            <input asp-for="Revision.S3Location.BundleType" class="form-control" />
+        </div>  
     </div>
     
     <div>
-        <label class="control-label">S3 Location</label>
+        <label class="control-label">S3 Key</label>
         <div class="">
-            <input asp-for="Revision.S3Location" class="form-control" />
-        </div>
+            <input asp-for="Revision.S3Location.Key" class="form-control" />
+        </div>  
     </div>
-    
+
     <div>
         <label class="control-label">TargetInstances</label>
         <div class="">
