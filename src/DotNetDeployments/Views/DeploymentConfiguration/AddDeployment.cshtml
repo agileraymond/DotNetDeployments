@@ -1,4 +1,5 @@
-﻿@model Amazon.CodeDeploy.Model.CreateDeploymentRequest
+﻿@using Amazon.CodeDeploy
+@model Amazon.CodeDeploy.Model.CreateDeploymentRequest
 @{
     ViewData["Title"] = "Add Deployment";
 }
@@ -40,7 +41,17 @@
             <input asp-for="IgnoreApplicationStopFailures" class="form-control" />
         </div>
     </div>
-    
+
+    <div>
+        <label class="control-label">Revision Type</label>
+        <div class="">
+            <select>
+                <option>S3</option>
+                <option>GitHub</option>
+            </select>
+        </div>
+    </div>
+
     <div>
         <label class="control-label">S3 Bucket</label>
         <div class="">
@@ -54,7 +65,7 @@
             <input asp-for="Revision.S3Location.BundleType" class="form-control" />
         </div>  
     </div>
-    
+
     <div>
         <label class="control-label">S3 Key</label>
         <div class="">
