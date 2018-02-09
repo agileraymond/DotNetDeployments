@@ -48,6 +48,19 @@ namespace DotNetDeployments.Controllers
             }
 
             return projects;            
+        }
+
+        public async Task<IActionResult> Delete(string id, string projectName)
+        {
+            var context = new DynamoDBContext(_dynamoDbClient);
+            
+            // load project
+            var projectModel = new ProjectModel { SolutionName = id, ProjectName = projectName };
+            var project = await context.LoadAsync(projectModel);                        
+            
+            // delete project
+            await context.DeleteAsync(project);
+            return RedirectToAction("Index");
         }        
     }
 }

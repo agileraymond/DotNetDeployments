@@ -25,6 +25,7 @@
                 @Html.DisplayNameFor(model => model.AwsAppName)
             </th>            
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +46,9 @@
                 </td>                
                 <td>
                     @Html.ActionLink("Deployment Config", "Edit", "DeploymentConfiguration", new { id = item.AwsAppName }) 
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Project", new { id = item.SolutionName, projectName = item.ProjectName })
                 </td>
             </tr>
         }
