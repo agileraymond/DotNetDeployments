@@ -6,27 +6,27 @@
 
 <h2>Add Project</h2>
 <form asp-controller="Project" asp-action="AddProject" method="post" role="form">
-
     <div class="form-group">
-        <label asp-for="SolutionName" class="control-label"></label>
+        <label class="control-label">Solution Name</label>
         <div class="">
             <input asp-for="SolutionName" class="form-control" />
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="ProjectName" class="control-label"></label>
+        <label class="control-label">Project Name</label>
         <div class="">
             <input asp-for="ProjectName" class="form-control" />
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="ProjectType" class="control-label"></label>
+        <label class="control-label">Project Type</label>
         <div class="">
-            <input asp-for="ProjectType" class="form-control" />
+            <select asp-for="ProjectType" asp-items="Html.GetEnumSelectList<ProjectType>()" 
+                class="form-control"></select>
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="AwsAppName" class="control-label"></label>
+        <label class="control-label">AWS Application Name</label>
         <div class="">
             <input asp-for="AwsAppName" class="form-control" />
         </div>
@@ -35,5 +35,5 @@
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Add" />
         </div>
-    </div>
+    </div>  
 </form>
