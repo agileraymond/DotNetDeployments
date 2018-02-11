@@ -44,7 +44,7 @@ namespace DotNetDeployments.Controllers
             {         
             }
 
-            return View();
+            return RedirectToAction("Index", "Project");
         }
 
         private async Task<GetApplicationResponse> GetApplication(string applicationName)
