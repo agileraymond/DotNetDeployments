@@ -28,10 +28,11 @@ namespace DotNetDeployments.Controllers
             }
         }
 
+/* 
         public async Task<IActionResult> Edit(string id)
         {
             return View();
-        }
+        }*/
 
         [HttpPost]
         public async Task<IActionResult> Add(CreateApplicationRequest createAppRequest)
