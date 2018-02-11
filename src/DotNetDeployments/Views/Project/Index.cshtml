@@ -45,7 +45,7 @@
                     @Html.DisplayFor(modelItem => item.AwsAppName)
                 </td>                
                 <td>
-                    @Html.ActionLink("Deployment Config", "Edit", "DeploymentConfiguration", new { id = item.AwsAppName }) 
+                    @Html.ActionLink("Deployment Config", "Add", "Application", new { id = item.AwsAppName }) 
                 </td>
                 <td>
                     @Html.ActionLink("Delete", "Delete", "Project", new { id = item.SolutionName, projectName = item.ProjectName })
