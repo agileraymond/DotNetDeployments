@@ -24,7 +24,7 @@ namespace DotNetDeployments.Controllers
             }
             else
             {
-                return View("Edit");        
+                return View("Edit", application);        
             }
         }
 
