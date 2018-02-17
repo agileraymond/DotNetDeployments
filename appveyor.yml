@@ -9,4 +9,4 @@ build_script:
 - dotnet build DotNetDeployments.csproj
 test_script:
   - cd ../../test
-  - dotnet test
+  - dotnet test DotNetDeployments.Tests.csproj
