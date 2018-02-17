@@ -8,5 +8,5 @@ before_build:
 build_script:
 - dotnet build DotNetDeployments.csproj
 test_script:
-  - cd ../../test
+  - cd ../../test/DotNetDeployments.Tests
   - dotnet test DotNetDeployments.Tests.csproj
