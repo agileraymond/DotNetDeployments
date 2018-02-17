@@ -6,7 +6,7 @@ image: Visual Studio 2017
 before_build:
 - cd src/Mvc
 build_script:
-- dotnet build
+- dotnet build DotNetDeployments.csproj
 test_script:
   - cd ../../test
   - dotnet test
