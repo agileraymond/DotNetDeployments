@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DotNetDeployments\DotNetDeployments.csproj" />
+    <ProjectReference Include="..\..\src\Mvc\DotNetDeployments.csproj" />
   </ItemGroup>
 
 </Project>

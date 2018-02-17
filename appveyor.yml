@@ -4,9 +4,9 @@ branches:
     - master
 image: Visual Studio 2017
 before_build:
-- cd src/DotNetDeployments
+- cd src/Mvc
 build_script:
 - dotnet build
 test_script:
-  - cd ../../Tests
+  - cd ../../test
   - dotnet test
